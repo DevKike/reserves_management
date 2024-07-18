@@ -1,5 +1,5 @@
-import { IUser } from "../domain/entities/IUser";
-import { IUserService } from "../domain/services/IUserService";
+import { IUser } from "../domain/entity/IUser";
+import { IUserService } from "../domain/service/IUserService";
 
 export class UserUseCases {
   private _userService: IUserService;
