@@ -1,5 +1,6 @@
 import { DataSource } from "typeorm";
 import { Constant } from "../utils/Constant";
+import { User } from "../modules/user/infrastructure/entity/User";
 
 export const AppDataSource = new DataSource({
   type: Constant.DB_TYPE as any,
@@ -7,8 +8,8 @@ export const AppDataSource = new DataSource({
   port: Constant.DB_PORT as any,
   username: Constant.DB_USERNAME,
   password: Constant.DB_PASSWORD,
-  database: Constant.DB_DATABASE_NAME,
+  database: Constant.DB_NAME,
   synchronize: false,
-  entities: [],
+  entities: [User],
   migrations: [],
 });
