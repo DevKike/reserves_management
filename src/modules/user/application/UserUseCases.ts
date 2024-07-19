@@ -1,7 +1,7 @@
 import { IUser } from "../domain/entity/IUser";
 import { IUserService } from "../domain/service/IUserService";
 
-export class UserUseCases {
+export class UserUseCase {
   private _userService: IUserService;
 
   constructor(userService: IUserService) {
