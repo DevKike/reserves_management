@@ -1,5 +1,19 @@
-import express from "express";
+import express, { Application } from "express";
+import { Constant } from "../utils/Constant";
 
-export const app = express();
+export class App {
+  private readonly _application: Application;
 
-app.use(express.json());
+  constructor() {
+    this._application = express();
+  }
+
+  public getApp(): Application {
+    return this._application;
+  }
+
+  private setMiddlewares() {
+    this._application.use(express.json());
+    this._application.set("PORT", Constant.PORT);
+  }
+}
