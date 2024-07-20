@@ -9,7 +9,7 @@ export const AppDataSource = new DataSource({
   username: Constant.DB_USERNAME,
   password: Constant.DB_PASSWORD,
   database: Constant.DB_NAME,
-  synchronize: false,
+  synchronize: true,
   entities: [User],
-  migrations: [],
+  migrations: [__dirname + "../migrations/**/*.ts"],
 });
