@@ -2,7 +2,7 @@ import { DataSource } from "typeorm";
 import { Constant } from "../utils/Constant";
 import { User } from "../modules/user/infrastructure/entity/User";
 
-export const AppDataSource = new DataSource({
+export const appDataSource = new DataSource({
   type: Constant.DB_TYPE as any,
   host: Constant.DB_HOST,
   port: Constant.DB_PORT as any,
