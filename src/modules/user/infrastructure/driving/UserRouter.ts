@@ -1,5 +1,7 @@
 import { Request, Response, Router } from "express";
 import { ImplUserUseCase } from "../../application/ImplUserUseCase";
+import { registerSchema } from "../schema/UserSchema"
+import { SchemaValidator } from "../../../../middleware/schemaValidator/SchemaValidator";
 
 export class UserRouter {
   private readonly _userRouter: Router;
@@ -12,7 +14,7 @@ export class UserRouter {
   }
 
   initRoutes(): Router {
-    this._userRouter.post("/register", async (req: Request, res: Response) => {
+    this._userRouter.post("/register", SchemaValidator.validate(registerSchema), async (req: Request, res: Response) => {
       try {
         const user = req.body;
         await this._userUseCase.createUser(user);
