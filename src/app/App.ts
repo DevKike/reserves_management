@@ -6,6 +6,7 @@ export class App {
 
   constructor() {
     this._application = express();
+    this.setMiddlewares();
   }
 
   public getApp(): Application {
