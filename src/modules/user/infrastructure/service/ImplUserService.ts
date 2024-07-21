@@ -14,7 +14,7 @@ export class ImplUserService implements IUserService {
     try {
       const hashedPassword = Encrypt.hashPassword(user.password);
       const newUser = { ...user, password: hashedPassword };
-      await this._userRepository.create(newUser);
+      await this._userRepository.save(newUser);
     } catch (error) {
       throw error;
     }

@@ -11,7 +11,7 @@ export class ImplUserRepository implements IUserRepository {
     this._userRepository = dataSource.getRepository(User);
   }
 
-  async create(user: IUser): Promise<void> {
+  async save(user: IUser): Promise<void> {
     await this._userRepository.save(user);
   }
 }
