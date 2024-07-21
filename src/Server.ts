@@ -27,6 +27,7 @@ class Server {
 
   private startServer(): void {
     const application = this._app.getApp();
+    
     application.listen(application.get("PORT"), () => {
       try {
         console.log(`Server running at port: ${application.get("PORT")}`);
