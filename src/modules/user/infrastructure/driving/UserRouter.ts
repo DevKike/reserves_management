@@ -12,7 +12,7 @@ export class UserRouter {
   }
 
   initRoutes(): Router {
-    this._userRouter.post("/", async (req: Request, res: Response) => {
+    this._userRouter.post("/register", async (req: Request, res: Response) => {
       try {
         const user = req.body;
         await this._userUseCase.createUser(user);
